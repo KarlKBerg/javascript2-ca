@@ -91,3 +91,26 @@ form p {
 #register-txt {
   text-decoration: underline;
 }
+#requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+#requirements h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+#required-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+}
+.register-req {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.register-req i {
+  font-size: 0.4rem;
+}
