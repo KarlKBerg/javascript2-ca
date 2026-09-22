@@ -16,7 +16,8 @@ header {
 #logo {
   font-size: 3.2rem;
 }
-main {
+#register,
+#login {
   flex: 1;
   display: flex;
   justify-content: center;
