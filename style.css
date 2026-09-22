@@ -16,13 +16,6 @@ header {
 #logo {
   font-size: 3.2rem;
 }
-#header-btn {
-  font-size: 1.6rem;
-  padding: 1.2rem 4rem;
-  background-color: blue;
-  font-weight: 700;
-  border-radius: 0.8rem;
-}
 main {
   flex: 1;
   display: flex;
@@ -71,17 +64,17 @@ input {
   border-radius: 0.8rem;
   color: white;
 }
-#login-btn {
+.login-btn {
   background-color: green;
 }
-#login-btn:hover {
+.login-btn:hover {
   cursor: pointer;
   background-color: #006800;
 }
-#register-btn {
+.register-btn {
   background-color: blue;
 }
-#register-btn:hover {
+.register-btn:hover {
   cursor: pointer;
   background-color: #0000c8;
 }
