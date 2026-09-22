@@ -36,7 +36,8 @@ header {
   font-size: 3.2rem;
   font-weight: 600;
 }
-form {
+#register-form,
+#login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
