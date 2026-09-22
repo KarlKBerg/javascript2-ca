@@ -51,7 +51,8 @@ header {
 label {
   font-size: 1.6rem;
 }
-input {
+.form-item-container input,
+#search input {
   background-color: white;
   padding: 0.4rem;
   font-size: 1.4rem;
@@ -121,4 +122,132 @@ form p {
 }
 .nav-item:hover {
   color: #b4b4b4;
+}
+#feed {
+  display: flex;
+  flex-direction: column;
+  width: 80rem;
+  padding: 1.8rem 1.8rem;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  margin: 0 auto;
+}
+#feed h1 {
+  font-size: 3.2rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.8rem;
+}
+.create-post {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.4rem;
+  gap: 1.2rem;
+  background-color: #1f1f1f;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+}
+.create-post h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.4rem;
+}
+.create-post form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+.create-post form input {
+  background-color: white;
+  padding: 0.4rem;
+  font-size: 1.4rem;
+  border-radius: 0.8rem;
+  width: 100%;
+}
+.create-post form textarea {
+  background-color: white;
+  resize: none;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  width: 100%;
+}
+#post-btn {
+  background-color: #3a3a3b;
+  align-self: flex-end;
+  border: 2px solid white;
+}
+#post-btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-top: 2.4rem;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #1f1f1f;
+  border-radius: 0.8rem;
+}
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  align-items: flex-start;
+}
+.post-meta i {
+  font-size: 1.6rem;
+}
+.post-meta i:hover {
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+}
+.post-info {
+  display: flex;
+  gap: 1.2rem;
+}
+.post-info .circle {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: white;
+}
+.post-data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.post-time {
+  font-size: 1.2rem;
+}
+.post-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.post-message {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.post-message span {
+  font-size: 1.4rem;
+}
+.post-reactions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.6rem;
+}
+.post-reaction i {
+  font-size: 1.8rem;
+}
+.post-reaction:hover {
+  cursor: pointer;
+  color: white;
 }
