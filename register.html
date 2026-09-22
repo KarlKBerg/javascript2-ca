@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/b5a5784c82.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>The social | Register</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" id="logo">The social</a>
+      <a href="./index.html" id="header-btn">Login</a>
+    </header>
+    <main>
+      <div class="form-container" id="register-container">
+        <h1>Register</h1>
+        <form>
+          <div class="form-item-container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="uname" id="uname" />
+          </div>
+
+          <div class="form-item-container">
+            <label for="email"><b>Email</b></label>
+            <input type="email" name="email" id="email" />
+          </div>
+
+          <div class="form-item-container">
+            <label for="password"><b>Password</b></label>
+            <input type="password" name="password" id="password" />
+          </div>
+
+          <div class="form-item-container">
+            <label for="re-password"><b>Re-enter password</b></label>
+            <input type="password" name="re-password" id="re-password" />
+          </div>
+          <button class="form-btn" id="register-btn">Register</button>
+          <p>
+            Already have an account?
+            <a href="index.html" id="register-txt">Login here</a>
+          </p>
+        </form>
+        <div id="requirements">
+          <h2>Requirements</h2>
+          <div id="required-items">
+            <div class="register-req">
+              <i class="fa-solid fa-circle"></i>
+              <span>@stud.noroff email</span>
+            </div>
+            <div class="register-req">
+              <i class="fa-solid fa-circle"></i>
+              <span>Password contains 8 or more characters</span>
+            </div>
+            <div class="register-req">
+              <i class="fa-solid fa-circle"></i>
+              <span>Unique username</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
