@@ -107,3 +107,16 @@ form p {
 .register-req i {
   font-size: 0.4rem;
 }
+.nav-item {
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+.nav-item span {
+  font-size: 1.4rem;
+}
+.nav-item:hover {
+  color: #b4b4b4;
+}
