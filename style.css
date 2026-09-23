@@ -343,3 +343,23 @@ form p {
 .user-posts-container {
   margin-top: 1.4rem;
 }
+
+.toast-message {
+  padding: 1.6rem 1.6rem;
+  text-align: center;
+}
+
+.message-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.error {
+  background-color: red;
+}
+.success {
+  background-color: green;
+  color: white;
+}
+.hidden {
+  display: none;
+}
