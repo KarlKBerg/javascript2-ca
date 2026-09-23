@@ -2,10 +2,10 @@
 
 const BASE_URL = "https://v2.api.noroff.dev/";
 
-async function registerUser() {
+async function registerUser(username, email, password) {
   const endpoint = "auth/register";
   const NEW_USER = {
-    name: name,
+    name: username,
     email: email,
     password: password,
   };
@@ -61,11 +61,6 @@ function displayToastMessage(message, type) {
   }
 }
 
-function disableButton(id) {
-  const BUTTON = document.getElementById(id);
-
-  BUTTON.disabled = true;
-}
 function checkRegistrationForm() {
   const EMAIL = document.getElementById("email").value.trim().toLowerCase();
   const USERNAME = document.getElementById("uname").value.trim();
@@ -88,7 +83,7 @@ function checkRegistrationForm() {
     displayToastMessage("Passwords must match", "error");
     return;
   }
-  registerUser();
+  registerUser(USERNAME, EMAIL, PASSWORD);
 }
 
 function usernameFilled(username) {
@@ -105,6 +100,12 @@ function passwordMatch(psw, rePsw) {
 
 function passwordLength(psw) {
   return psw.length >= 8;
+}
+
+function disableButton(id) {
+  const BUTTON = document.getElementById(id);
+
+  BUTTON.disabled = true;
 }
 
 document.getElementById("register-button").addEventListener("click", () => {
