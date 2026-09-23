@@ -27,8 +27,6 @@ async function registerUser(username, email, password) {
       throw new Error("Registration failed with status: " + RESPONSE.status);
     }
 
-    const RESULT = await RESPONSE.json();
-
     displayToastMessage("Registration successful!", "success");
     setTimeout(() => {
       window.location.href = "index.html";
@@ -41,25 +39,18 @@ async function registerUser(username, email, password) {
 
 function displayToastMessage(message, type) {
   const CONTAINER = document.querySelector(".toast-message");
+  if (!CONTAINER) return;
   const MESSAGE_ELEMENT = document.createElement("span");
   MESSAGE_ELEMENT.textContent = message;
   MESSAGE_ELEMENT.classList.add("message-text");
-  if (!CONTAINER) return;
   CONTAINER.innerHTML = "";
   CONTAINER.appendChild(MESSAGE_ELEMENT);
-  if (type === "error") {
-    CONTAINER.classList.remove("hidden");
-    CONTAINER.classList.add("error");
-    setTimeout(() => {
-      CONTAINER.classList.add("hidden");
-    }, 3000);
-  } else {
-    CONTAINER.classList.remove("hidden");
-    CONTAINER.classList.add("success");
-    setTimeout(() => {
-      CONTAINER.classList.add("hidden");
-    }, 3000);
-  }
+  CONTAINER.classList.remove("hidden");
+  CONTAINER.classList.add(type);
+  setTimeout(() => {
+    CONTAINER.classList.add("hidden");
+    CONTAINER.classList.remove(type);
+  }, 3000);
 }
 
 function checkRegistrationForm() {
@@ -105,19 +96,16 @@ function passwordLength(psw) {
 
 function disableButton(id) {
   const BUTTON = document.getElementById(id);
-
+  if (!BUTTON) return;
   BUTTON.disabled = true;
 }
 function enableButton(id) {
   const BUTTON = document.getElementById(id);
-
+  if (!BUTTON) return;
   BUTTON.disabled = false;
 }
 
-document.getElementById("register-button").addEventListener("click", () => {
-  if (usernameValidation()) {
-    console.log("Success");
-  } else if (!usernameValidation()) {
-    console.log("Error");
-  }
+document.getElementById("register-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  checkRegistrationForm();
 });
