@@ -56,8 +56,8 @@ function displayToastMessage(message, type) {
 function checkRegistrationForm() {
   const EMAIL = document.getElementById("email").value.trim().toLowerCase();
   const USERNAME = document.getElementById("uname").value.trim();
-  const PASSWORD = document.getElementById("psw").value;
-  const RE_PASSWORD = document.getElementById("re-psw").value;
+  const PASSWORD = document.getElementById("password").value;
+  const RE_PASSWORD = document.getElementById("re-password").value;
 
   if (!usernameFilled(USERNAME)) {
     displayToastMessage("Username can't be empty, try again", "error");
