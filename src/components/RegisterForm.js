@@ -11,7 +11,7 @@ import {
 } from "../utils/validation.js";
 import { registerUser } from "../services/authService.js";
 
-export async function checkRegistrationForm() {
+async function checkRegistrationForm() {
   const email = document.getElementById("email").value.trim().toLowerCase();
   const username = document.getElementById("uname").value.trim();
   const password = document.getElementById("password").value;
