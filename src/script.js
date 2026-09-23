@@ -59,3 +59,9 @@ function displayToastMessage(message, type) {
     }, 3000);
   }
 }
+
+function disableButton(id) {
+  const BUTTON = document.getElementById(id);
+
+  BUTTON.disabled = true;
+}
