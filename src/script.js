@@ -44,6 +44,7 @@ function displayToastMessage(message, type) {
   MESSAGE_ELEMENT.textContent = message;
   MESSAGE_ELEMENT.classList.add("message-text");
   if (!CONTAINER) return;
+  CONTAINER.innerHTML = "";
   CONTAINER.appendChild(MESSAGE_ELEMENT);
   if (type === "error") {
     CONTAINER.classList.remove("hidden");
@@ -65,3 +66,51 @@ function disableButton(id) {
 
   BUTTON.disabled = true;
 }
+function checkRegistrationForm() {
+  const EMAIL = document.getElementById("email").value.trim().toLowerCase();
+  const USERNAME = document.getElementById("uname").value.trim();
+  const PASSWORD = document.getElementById("psw").value;
+  const RE_PASSWORD = document.getElementById("re-psw").value;
+
+  if (!usernameFilled(USERNAME)) {
+    displayToastMessage("Username can't be empty, try again", "error");
+    return;
+  }
+  if (!emailValid(EMAIL)) {
+    displayToastMessage("Email must contain @stud.noroff.no", "error");
+    return;
+  }
+  if (!passwordLength(PASSWORD)) {
+    displayToastMessage("Password must be 8 characters or longer", "error");
+    return;
+  }
+  if (!passwordMatch(PASSWORD, RE_PASSWORD)) {
+    displayToastMessage("Passwords must match", "error");
+    return;
+  }
+  registerUser();
+}
+
+function usernameFilled(username) {
+  return username !== "";
+}
+
+function emailValid(email) {
+  return email.includes("@stud.noroff.no");
+}
+
+function passwordMatch(psw, rePsw) {
+  return psw === rePsw;
+}
+
+function passwordLength(psw) {
+  return psw.length >= 8;
+}
+
+document.getElementById("register-button").addEventListener("click", () => {
+  if (usernameValidation()) {
+    console.log("Success");
+  } else if (!usernameValidation()) {
+    console.log("Error");
+  }
+});
