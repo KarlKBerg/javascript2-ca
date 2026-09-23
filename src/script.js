@@ -35,6 +35,8 @@ async function registerUser(username, email, password) {
     }, 2000);
   } catch (error) {
     displayToastMessage(`Error: ` + error, "error");
+  } finally {
+    enableButton("register-button");
   }
 }
 
@@ -106,6 +108,11 @@ function disableButton(id) {
   const BUTTON = document.getElementById(id);
 
   BUTTON.disabled = true;
+}
+function enableButton(id) {
+  const BUTTON = document.getElementById(id);
+
+  BUTTON.disabled = false;
 }
 
 document.getElementById("register-button").addEventListener("click", () => {
