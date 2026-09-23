@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/b5a5784c82.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>The social</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" id="logo">The social</a>
+      <div id="search">
+        <input type="search" placeholder="Search..." />
+      </div>
+      <nav>
+        <a href="profile.html" class="nav-item">
+          <i class="fa-solid fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </header>
+    <main id="profile">
+      <div class="profile-container">
+        <div class="user-img-info">
+          <div class="circle"></div>
+          <div class="user-info">
+            <span id="username">John5Post</span>
+            <div class="follow-count">
+              <div class="follow">
+                <span>Following</span>
+                <span id="following-count">8</span>
+              </div>
+              <div class="follow">
+                <span>Followers</span>
+                <span id="followers-count">2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button>Edit porfile</button>
+      </div>
+      <h2>Posts</h2>
+      <div class="user-posts-container">
+        <!-- TEST POST -->
+        <a href="post.html" class="post">
+          <div class="post-meta">
+            <div class="post-info">
+              <div class="circle"></div>
+              <div class="post-data">
+                <span class="poster-name"><b>@John5Post</b></span>
+                <span class="post-time">Posted at: 13:45</span>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="post-message">
+            <h2 class="post-title">Hate me or love me</h2>
+            <span
+              >I really like the fact that somewhere in this world, someone
+              could hate me for no reason. That means somewhere in this world,
+              someone could love me for no reason aswell</span
+            >
+          </div>
+          <div class="post-reactions">
+            <div class="post-reaction">
+              <i class="fa-solid fa-comment"></i>
+              <span>0</span>
+            </div>
+            <div class="post-reaction" id="thumbs-up">
+              <i class="fa-jelly-fill fa-regular fa-thumbs-up reacted"></i>
+              <span>0</span>
+            </div>
+            <div class="post-reaction" id="thumbs-down">
+              <i class="fa-jelly-fill fa-regular fa-thumbs-down"></i>
+              <span>0</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
