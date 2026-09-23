@@ -31,11 +31,10 @@ async function registerUser(username, email, password) {
 
     displayToastMessage("Registration successful!", "success");
     setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
     }, 2000);
   } catch (error) {
     displayToastMessage(`Error: ` + error, "error");
-  } finally {
     enableButton("register-button");
   }
 }
