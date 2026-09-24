@@ -1,4 +1,8 @@
+import { displayToastMessage } from "../utils/domHelpers.js";
 import { BASE_URL } from "./apiClient.js";
+import { post } from "./apiClient.js";
+
+const LOGIN_ENDPOINT = "auth/login";
 
 export async function registerUser(username, email, password) {
   const endpoint = "auth/register";
@@ -20,4 +24,22 @@ export async function registerUser(username, email, password) {
     throw new Error("Registration failed with status: " + response.status);
   }
   return await response.json();
+}
+
+export async function loginUser(credentials) {
+  try {
+    const response = await post(LOGIN_ENDPOINT, credentials);
+    const { accessToken, ...profile } = response.data;
+
+    if (accessToken) {
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("porfile", JSON.stringify(profile));
+      return profile;
+    } else {
+      throw new Error("Login successful, but no access token recieved!");
+      displayToastMessage(Error, "error");
+    }
+  } catch (error) {
+    throw error;
+  }
 }
