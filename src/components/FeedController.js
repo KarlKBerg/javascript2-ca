@@ -1,11 +1,19 @@
 import { getPosts } from "../services/postsService.js";
+import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderPost } from "./PostCard.js";
 
 async function renderFeed() {
-  const posts = await getPosts();
-  posts.forEach((post) => {
-    renderPost(post);
-  });
+  try {
+    const posts = await getPosts();
+    const container = document.querySelector(".posts-container");
+    if (!container) return;
+    container.innerHTML = "";
+    posts.forEach((post) => {
+      renderPost(post);
+    });
+  } catch (error) {
+    displayToastMessage(error.message, "error");
+  }
 }
 
 export function pageCheck() {
