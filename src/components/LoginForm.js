@@ -14,7 +14,7 @@ export function loginFormListener() {
 
     try {
       const profile = await loginUser(credentials);
-      window.location.href = "/feed.html";
+      window.location.href = "feed.html";
       displayToastMessage("Login successfull!", "success");
     } catch (error) {
       displayToastMessage(`Login failed: ${error.message}`, "error");
