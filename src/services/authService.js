@@ -37,7 +37,6 @@ export async function loginUser(credentials) {
       return profile;
     } else {
       throw new Error("Login successful, but no access token recieved!");
-      displayToastMessage(Error, "error");
     }
   } catch (error) {
     throw error;
