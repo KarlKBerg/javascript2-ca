@@ -5,7 +5,9 @@ export async function renderFeed() {
   try {
     const response = await get(endpoint);
     const posts = response.data;
-    console.log(posts);
+    const container = document.querySelector(".posts-container");
+    if (!container) return;
+    container.innerHTML = "";
     posts.forEach((feedPost) => {
       renderPost(feedPost);
     });
@@ -16,9 +18,6 @@ export async function renderFeed() {
 
 function renderPost(post) {
   const container = document.querySelector(".posts-container");
-  if (!container) return;
-  container.innerHTML = "";
-
   const postDiv = document.createElement("div");
   postDiv.classList.add("post");
 
