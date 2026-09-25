@@ -1,5 +1,3 @@
-import { displayToastMessage } from "../utils/domHelpers.js";
-
 export const BASE_URL = "https://v2.api.noroff.dev/";
 const API_KEY = "163144e0-28b1-43f5-b65e-a87870a9474e";
 
