@@ -29,7 +29,7 @@ function renderPost(post) {
 
   const profileImg = document.createElement("img");
   profileImg.classList.add("circle");
-  profileImg.src = post.author.avatar.url;
+  profileImg.src = post.author?.avatar?.url;
 
   const postData = document.createElement("div");
   postData.classList.add("post-data");
@@ -38,7 +38,7 @@ function renderPost(post) {
   postAuthor.classList.add("poster-name");
 
   const bold = document.createElement("b");
-  bold.textContent = post.author.name;
+  bold.textContent = post.author?.name;
 
   const postedAt = document.createElement("span");
   postedAt.classList.add("post-time");
@@ -97,10 +97,10 @@ function renderPost(post) {
   settingsContainer.classList.add("settings-container");
 
   const editPostIcon = document.createElement("i");
-  editPost.classList.add("fa-solid", "fa-pen-to-square");
+  editPostIcon.classList.add("fa-solid", "fa-pen-to-square");
 
   const deletePostIcon = document.createElement("i");
-  deletePost.classList.add("fa-solid", "fa-trash");
+  deletePostIcon.classList.add("fa-solid", "fa-trash");
 
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
