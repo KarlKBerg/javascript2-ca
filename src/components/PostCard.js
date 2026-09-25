@@ -123,3 +123,6 @@ export function renderPost(post) {
     }
   });
 }
+
+export function editPost(id) {}
+export function deletePost(id) {}
