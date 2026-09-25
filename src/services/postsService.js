@@ -5,3 +5,9 @@ export async function getPosts() {
   const response = await get(endpoint);
   return response.data;
 }
+
+export async function getSinglePost(id) {
+  const endpoint = `social/posts/${id}?_author=true`;
+  const response = await get(endpoint);
+  return response.data;
+}
