@@ -17,7 +17,7 @@ export function loginFormListener() {
       window.location.href = "/feed.html";
       displayToastMessage("Login successfull!", "success");
     } catch (error) {
-      displayToastMessage(`Login failed: ${error.message}, "error`);
+      displayToastMessage(`Login failed: ${error.message}`, "error");
     }
   });
 }
