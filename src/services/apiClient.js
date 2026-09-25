@@ -29,11 +29,12 @@ async function apiClient(endpoint, options = {}) {
 
     if (!response.ok) {
       const errorData = await response.json();
+      if (response.status === 401) {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("profile");
+        window.location.href = "index.html";
+      }
       throw new Error(errorData.errors?.[0]?.message || "An API error occured");
-      displayToastMessage(
-        errorData.errors?.[0]?.message || "An API error occured",
-        "error",
-      );
     }
 
     if (response.status === 204) {
@@ -41,8 +42,7 @@ async function apiClient(endpoint, options = {}) {
     }
     return await response.json();
   } catch (error) {
-    console.error("API Client error: ", error);
-    displayToastMessage("API Client error:", "error");
+    displayToastMessage(error.message, "error");
     throw error;
   }
 }
