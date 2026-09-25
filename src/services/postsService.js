@@ -1,6 +1,16 @@
 import { get } from "./apiClient.js";
 
-export async function renderFeed() {
+export async function getPosts() {
+  const endpoint = "social/posts?_author=true";
+  const response = await get(endpoint);
+  return response.data;
+}
+
+function editPost() {}
+function deletePost() {}
+
+/*
+export async function getPosts() {
   const endpoint = "social/posts?_author=true";
   try {
     const response = await get(endpoint);
@@ -15,6 +25,4 @@ export async function renderFeed() {
     throw error;
   }
 }
-
-function editPost() {}
-function deletePost() {}
+*/
