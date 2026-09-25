@@ -50,6 +50,9 @@ function renderPost(post) {
   const postMessageDiv = document.createElement("div");
   postMessageDiv.classList.add("post-message");
 
+  const postMessageClick = document.createElement("a");
+  postMessageClick.href = `post.html?id=${post.id}`;
+
   const postTitle = document.createElement("h2");
   postTitle.classList.add("post-title");
   postTitle.textContent = post.title;
@@ -89,6 +92,18 @@ function renderPost(post) {
   const postCommentsCount = document.createElement("span");
   postCommentsCount.textContent = post._count.comments;
 
+  const postSettings = document.createElement("div");
+  postSettings.classList.add("post-settings", "hidden");
+
+  const settingsContainer = document.createElement("div");
+  settingsContainer.classList.add("settings-container");
+
+  const editPost = document.createElement("i");
+  editPost.classList.add("fa-solid", "fa-pen-to-square");
+
+  const deletePost = document.createElement("i");
+  deletePost.classList.add("fa-solid", "fa-trash");
+
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
   postMeta.appendChild(postInfo);
@@ -98,7 +113,8 @@ function renderPost(post) {
   postAuthor.appendChild(bold);
   postData.appendChild(postedAt);
   postMeta.appendChild(postMenu);
-  postDiv.appendChild(postMessageDiv);
+  postDiv.appendChild(postMessageClick);
+  postMessageClick.appendChild(postMessageDiv);
   postMessageDiv.appendChild(postTitle);
   postMessageDiv.appendChild(postMessage);
   postDiv.appendChild(postReactions);
@@ -111,7 +127,22 @@ function renderPost(post) {
   postReactions.appendChild(postComments);
   postComments.appendChild(postCommentsIcon);
   postComments.appendChild(postCommentsCount);
+  postMenu.appendChild(postSettings);
+  postSettings.appendChild(settingsContainer);
+  settingsContainer.appendChild(editPost);
+  settingsContainer.appendChild(deletePost);
+
   postMenu.addEventListener("click", (event) => {
-    console.log("clicked");
+    if (event.target.classList.contains("fa-ellipsis-vertical")) {
+      postSettings.classList.toggle("hidden");
+    }
+    if (event.target.classList.contains("fa-pen-to-square")) {
+      editPost();
+    } else if (event.target.classList.contains("fa-trash")) {
+      deletePost();
+    }
   });
 }
+
+function editPost() {}
+function deletePost() {}
