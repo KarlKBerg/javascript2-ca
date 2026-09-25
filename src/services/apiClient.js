@@ -27,27 +27,22 @@ async function apiClient(endpoint, options = {}) {
     config.body = JSON.stringify(body);
   }
 
-  try {
-    const response = await fetch(BASE_URL + endpoint, config);
+  const response = await fetch(BASE_URL + endpoint, config);
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      if (response.status === 401) {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("profile");
-        window.location.href = "index.html";
-      }
-      throw new Error(errorData.errors?.[0]?.message || "An API error occured");
+  if (!response.ok) {
+    const errorData = await response.json();
+    if (response.status === 401) {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("profile");
+      window.location.href = "index.html";
     }
-
-    if (response.status === 204) {
-      return null;
-    }
-    return await response.json();
-  } catch (error) {
-    displayToastMessage(error.message, "error");
-    throw error;
+    throw new Error(errorData.errors?.[0]?.message || "An API error occured");
   }
+
+  if (response.status === 204) {
+    return null;
+  }
+  return await response.json();
 }
 
 export const get = (endpoint) => apiClient(endpoint);
