@@ -46,5 +46,5 @@ export async function loginUser(credentials) {
 export function logoutUser() {
   localStorage.removeItem("accessToken");
   localStorage.removeItem("profile");
-  window.location.href = "/index.html";
+  window.location.href = "index.html";
 }
