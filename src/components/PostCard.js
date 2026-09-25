@@ -117,9 +117,9 @@ export function renderPost(post) {
       postSettings.classList.toggle("hidden");
     }
     if (event.target.classList.contains("fa-pen-to-square")) {
-      editPost();
+      editPost(post.id);
     } else if (event.target.classList.contains("fa-trash")) {
-      deletePost();
+      deletePost(post.id);
     }
   });
 }
