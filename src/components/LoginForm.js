@@ -3,6 +3,7 @@ import { displayToastMessage } from "../utils/domHelpers.js";
 
 export function loginFormListener() {
   const form = document.getElementById("login-form");
+  if (!form) return;
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
