@@ -1,5 +1,7 @@
-export function renderPost(post) {
-  const container = document.querySelector(".posts-container");
+export function renderPost(post, containerId) {
+  const PARAMS = new URLSearchParams(window.location.search);
+  const ID = PARAMS.get("id");
+  const container = document.getElementById(containerId);
   const postDiv = document.createElement("div");
   postDiv.classList.add("post");
 
