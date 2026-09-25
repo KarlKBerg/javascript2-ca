@@ -65,7 +65,6 @@ function renderPost(post) {
 
   const thumbUp = document.createElement("div");
   thumbUp.classList.add("post-reaction");
-  thumbUp.id = "thumbs-up";
 
   const thumbUpIcon = document.createElement("i");
   thumbUpIcon.classList.add("fa-jelly-fill", "fa-regular", "fa-thumbs-up");
@@ -75,7 +74,6 @@ function renderPost(post) {
 
   const thumbDown = document.createElement("div");
   thumbDown.classList.add("post-reaction");
-  thumbDown.id = "thumbs-down";
 
   const thumbDownIcon = document.createElement("i");
   thumbDownIcon.classList.add("fa-jelly-fill", "fa-regular", "fa-thumbs-down");
@@ -98,10 +96,10 @@ function renderPost(post) {
   const settingsContainer = document.createElement("div");
   settingsContainer.classList.add("settings-container");
 
-  const editPost = document.createElement("i");
+  const editPostIcon = document.createElement("i");
   editPost.classList.add("fa-solid", "fa-pen-to-square");
 
-  const deletePost = document.createElement("i");
+  const deletePostIcon = document.createElement("i");
   deletePost.classList.add("fa-solid", "fa-trash");
 
   container.appendChild(postDiv);
@@ -129,8 +127,8 @@ function renderPost(post) {
   postComments.appendChild(postCommentsCount);
   postMenu.appendChild(postSettings);
   postSettings.appendChild(settingsContainer);
-  settingsContainer.appendChild(editPost);
-  settingsContainer.appendChild(deletePost);
+  settingsContainer.appendChild(editPostIcon);
+  settingsContainer.appendChild(deletePostIcon);
 
   postMenu.addEventListener("click", (event) => {
     if (event.target.classList.contains("fa-ellipsis-vertical")) {
