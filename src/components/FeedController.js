@@ -1,6 +1,7 @@
 import { getPosts } from "../services/postsService.js";
 import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderPost } from "./PostCard.js";
+import { renderSinglePost } from "./PostController.js";
 
 async function renderFeed() {
   try {
@@ -9,7 +10,7 @@ async function renderFeed() {
     if (!container) return;
     container.innerHTML = "";
     posts.forEach((post) => {
-      renderPost(post);
+      renderPost(post, "posts-container");
     });
   } catch (error) {
     displayToastMessage(error.message, "error");
@@ -23,7 +24,7 @@ export function pageCheck() {
   const profilePage = document.getElementById("profile");
   const token = localStorage.getItem("accessToken");
 
-  if (feed || postPage || profilePage) {
+  if (feed || profilePage) {
     if (!token) {
       window.location.href = "index.html";
     } else {
@@ -34,6 +35,14 @@ export function pageCheck() {
   if (loginPage) {
     if (token) {
       window.location.href = "feed.html";
+    }
+  }
+
+  if (postPage) {
+    if (!token) {
+      window.location.href = "index.html";
+    } else {
+      renderSinglePost();
     }
   }
 }
