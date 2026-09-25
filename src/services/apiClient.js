@@ -9,7 +9,7 @@ async function apiClient(endpoint, options = {}) {
     "Content-Type": "application/json",
   };
   const apiKey = localStorage.getItem("apiKey");
-  const accessToken = localStroage.getItem("accessToken");
+  const accessToken = localStorage.getItem("accessToken");
 
   const config = {
     method: body ? "POST" : "GET",
