@@ -12,7 +12,7 @@ export function pageCheck() {
   const feed = document.getElementById("feed");
   const loginPage = document.getElementById("login");
   const postPage = document.getElementById("post");
-  const profilePage = document.createElement("profile");
+  const profilePage = document.getElementById("profile");
   const token = localStorage.getItem("accessToken");
 
   if (feed || postPage || profilePage) {
