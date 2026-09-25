@@ -33,7 +33,7 @@ export async function loginUser(credentials) {
 
     if (accessToken) {
       localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("porfile", JSON.stringify(profile));
+      localStorage.setItem("profile", JSON.stringify(profile));
       return profile;
     } else {
       throw new Error("Login successful, but no access token recieved!");
