@@ -43,3 +43,9 @@ export async function loginUser(credentials) {
     throw error;
   }
 }
+
+export function logoutUser() {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("profile");
+  window.location.href = "/index.html";
+}
