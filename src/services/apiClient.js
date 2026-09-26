@@ -1,9 +1,10 @@
+import { getToken, removeToken } from "../storage/storage.js";
 export const BASE_URL = "https://v2.api.noroff.dev/";
 const API_KEY = "163144e0-28b1-43f5-b65e-a87870a9474e";
 
 async function apiClient(endpoint, options = {}) {
   const { body, ...customOptions } = options;
-  const accessToken = localStorage.getItem("accessToken");
+  const accessToken = getToken();
   const headers = {
     "Content-Type": "application/json",
     "X-Noroff-API-Key": API_KEY,
@@ -30,7 +31,7 @@ async function apiClient(endpoint, options = {}) {
   if (!response.ok) {
     const errorData = await response.json();
     if (response.status === 401) {
-      localStorage.removeItem("accessToken");
+      removeToken();
       localStorage.removeItem("profile");
       window.location.href = "index.html";
     }
