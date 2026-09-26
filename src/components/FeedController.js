@@ -3,7 +3,7 @@ import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderPost } from "./PostCard.js";
 import { renderSinglePost } from "./PostController.js";
 
-async function renderFeed() {
+export async function renderFeed() {
   try {
     const posts = await getPosts();
     const container = document.querySelector(".posts-container");
