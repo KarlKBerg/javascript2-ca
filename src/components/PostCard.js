@@ -1,4 +1,6 @@
-import { editPostListener } from "./EditPostController.js";
+import { deletePostAction } from "./deletePostController.js";
+import { populateEditModal } from "./EditPostController.js";
+export let editPostId;
 
 export function renderPost(post, containerId) {
   const PARAMS = new URLSearchParams(window.location.search);
@@ -91,7 +93,7 @@ export function renderPost(post, containerId) {
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
   postMeta.appendChild(postInfo);
-  if (!post.author.avatar.url) {
+  if (!post.author?.avatar?.url) {
   } else {
     postInfo.appendChild(profileImg);
   }
@@ -118,16 +120,17 @@ export function renderPost(post, containerId) {
   postSettings.appendChild(settingsContainer);
   settingsContainer.appendChild(editPostIcon);
   settingsContainer.appendChild(deletePostIcon);
-
   postMenu.addEventListener("click", (event) => {
     if (event.target.classList.contains("fa-ellipsis-vertical")) {
       postSettings.classList.toggle("hidden");
     }
     if (event.target.classList.contains("fa-pen-to-square")) {
       document.querySelector(".edit-post-modal").classList.remove("hidden");
-      editPostListener(post.id, post.title, post.body);
+      populateEditModal(post.title, post.body);
+      editPostId = post.id;
+      console.log(editPostId);
     } else if (event.target.classList.contains("fa-trash")) {
-      deletePost(post.id);
+      deletePostAction(post.id);
     }
   });
 }
