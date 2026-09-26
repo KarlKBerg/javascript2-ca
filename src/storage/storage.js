@@ -3,7 +3,7 @@ export function getToken() {
 }
 
 export function removeToken() {
-  return localStorage.removeItemItem("accessToken");
+  return localStorage.removeItem("accessToken");
 }
 
 export function setToken() {
