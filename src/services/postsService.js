@@ -12,11 +12,11 @@ export async function getSinglePost(id) {
   return response.data;
 }
 
-export async function createPost(title, message) {
+export async function createPost(title, body) {
   const endpoint = `social/posts`;
   const newPost = {
     title: title,
-    body: message,
+    body: body,
   };
   const response = await post(endpoint, newPost);
   return response.data;
