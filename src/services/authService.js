@@ -1,4 +1,4 @@
-import { displayToastMessage } from "../utils/domHelpers.js";
+import { removeToken, setToken } from "../storage/storage.js";
 import { BASE_URL } from "./apiClient.js";
 import { post } from "./apiClient.js";
 
@@ -32,7 +32,7 @@ export async function loginUser(credentials) {
     const { accessToken, ...profile } = response.data;
 
     if (accessToken) {
-      localStorage.setItem("accessToken", accessToken);
+      setToken();
       localStorage.setItem("profile", JSON.stringify(profile));
       return profile;
     } else {
@@ -44,7 +44,7 @@ export async function loginUser(credentials) {
 }
 
 export function logoutUser() {
-  localStorage.removeItem("accessToken");
+  removeToken();
   localStorage.removeItem("profile");
   window.location.href = "index.html";
 }
