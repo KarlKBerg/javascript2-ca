@@ -3,7 +3,7 @@ import { getToken } from "../storage/storage.js";
 import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderPost } from "./PostCard.js";
 import { renderSinglePost } from "./PostController.js";
-import { initProfile } from "./ProfileController.js";
+import { initProfile, initProfilePosts } from "./ProfileController.js";
 
 export async function renderFeed() {
   try {
@@ -53,6 +53,7 @@ export function pageCheck() {
       window.location.href = "index.html";
     } else {
       initProfile();
+      initProfilePosts();
     }
   }
 }
