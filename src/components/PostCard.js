@@ -128,7 +128,6 @@ export function renderPost(post, containerId) {
       document.querySelector(".edit-post-modal").classList.remove("hidden");
       populateEditModal(post.title, post.body);
       editPostId = post.id;
-      console.log(editPostId);
     } else if (event.target.classList.contains("fa-trash")) {
       deletePostAction(post.id);
     }
