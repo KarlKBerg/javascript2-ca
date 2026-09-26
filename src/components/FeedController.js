@@ -24,7 +24,7 @@ export function pageCheck() {
   const loginPage = document.getElementById("login");
   const postPage = document.getElementById("post");
   const profilePage = document.getElementById("profile");
-  const token = getToken;
+  const token = getToken();
 
   if (feed) {
     if (!token) {
