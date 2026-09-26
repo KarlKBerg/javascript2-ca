@@ -1,3 +1,5 @@
+import { editPostListener } from "./EditPostController.js";
+
 export function renderPost(post, containerId) {
   const PARAMS = new URLSearchParams(window.location.search);
   const ID = PARAMS.get("id");
@@ -122,12 +124,10 @@ export function renderPost(post, containerId) {
       postSettings.classList.toggle("hidden");
     }
     if (event.target.classList.contains("fa-pen-to-square")) {
-      editPost(post.id);
+      document.querySelector(".edit-post-modal").classList.remove("hidden");
+      editPostListener(post.id, post.title, post.body);
     } else if (event.target.classList.contains("fa-trash")) {
       deletePost(post.id);
     }
   });
 }
-
-export function editPost(id) {}
-export function deletePost(id) {}
