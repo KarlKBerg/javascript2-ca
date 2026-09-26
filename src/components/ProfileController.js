@@ -21,6 +21,7 @@ export async function initProfilePosts() {
   const url = new URLSearchParams(window.location.search);
   const params = url.get("name");
   let username = params;
+  if (!username) return;
   try {
     let posts = await fetchProfilePosts(username);
     posts.forEach((post) => {
