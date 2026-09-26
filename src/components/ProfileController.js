@@ -11,7 +11,7 @@ export async function initProfile() {
   if (!username) return;
   try {
     let user = await fetchProfile(username);
-    renderProfile(user);
+    renderProfile(user, initProfile());
   } catch (error) {
     displayToastMessage(error.message, "error");
   }
@@ -35,7 +35,7 @@ export async function initProfilePosts() {
 export function myProfile() {
   const profileLink = document.getElementById("profile-link");
   if (!profileLink) return;
-  const username = getProfile().name;
+  const username = getProfile()?.name;
   if (!username) return;
   profileLink.href = `profile.html?name=${username}`;
 }
