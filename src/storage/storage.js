@@ -5,3 +5,7 @@ export function getToken() {
 export function removeToken() {
   return localStorage.removeItemItem("accessToken");
 }
+
+export function setToken() {
+  return localStorage.setItem("accessToken");
+}
