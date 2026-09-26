@@ -2,7 +2,7 @@ import { createPost } from "../services/postsService.js";
 import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderFeed } from "./FeedController.js";
 
-export async function checkCreatePost() {
+async function checkCreatePost() {
   const titleField = document.getElementById("post-title").value.trim();
   const body = document.getElementById("post-message").value.trim();
 
