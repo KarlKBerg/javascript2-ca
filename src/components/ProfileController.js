@@ -11,7 +11,7 @@ export async function initProfile() {
   if (!username) return;
   try {
     let user = await fetchProfile(username);
-    renderProfile(user, initProfile());
+    renderProfile(user, initProfile);
   } catch (error) {
     displayToastMessage(error.message, "error");
   }
