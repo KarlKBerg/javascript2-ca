@@ -13,3 +13,7 @@ export function setToken(token) {
 export function getProfile() {
   return JSON.parse(localStorage.getItem("profile"));
 }
+
+export function setProfile(user) {
+  return localStorage.setItem("profile", JSON.stringify(user));
+}
