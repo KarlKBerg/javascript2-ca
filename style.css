@@ -183,7 +183,8 @@ form p {
   cursor: pointer;
   background-color: green;
 }
-.posts-container {
+.posts-container,
+.user-posts-container {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
