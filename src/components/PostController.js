@@ -11,9 +11,7 @@ export async function renderSinglePost() {
     if (!container) return;
     container.innerHTML = "";
     renderPost(singlePost, "post-container");
-    console.log("Yes");
   } catch (error) {
     displayToastMessage(error.message, "error");
-    console.log(error.message);
   }
 }
