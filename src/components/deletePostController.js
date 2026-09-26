@@ -6,6 +6,7 @@ export async function deletePostAction(id) {
   try {
     confirm("Delete post?");
     await deletePost(id);
+    window.location.href = "feed.html";
     renderFeed();
     displayToastMessage("Post deleted", "success");
   } catch (error) {
