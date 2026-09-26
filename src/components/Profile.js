@@ -66,5 +66,3 @@ export function renderProfile(user) {
     container.appendChild(followButton);
   }
 }
-
-export function renderProfilePosts() {}
