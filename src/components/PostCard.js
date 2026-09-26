@@ -25,7 +25,10 @@ export function renderPost(post, containerId) {
   postAuthor.classList.add("poster-name");
 
   const bold = document.createElement("b");
-  bold.textContent = post.author?.name;
+
+  const usernameLink = document.createElement("a");
+  usernameLink.textContent = post.author?.name;
+  usernameLink.href = `profile.html?name=${post.author.name}`;
 
   const postedAt = document.createElement("span");
   postedAt.classList.add("post-time");
@@ -99,6 +102,7 @@ export function renderPost(post, containerId) {
   postInfo.appendChild(postData);
   postData.appendChild(postAuthor);
   postAuthor.appendChild(bold);
+  bold.appendChild(usernameLink);
   postData.appendChild(postedAt);
   if (post.author?.name === getProfile()?.name) {
     postMeta.appendChild(postMenu);
