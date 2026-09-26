@@ -1,6 +1,8 @@
 import { getProfile } from "../storage/storage.js";
+import { followCheck } from "../utils/validation.js";
+import { followUser, unFollowUser } from "../services/profileService.js";
 
-export function renderProfile(user) {
+export function renderProfile(user, initFn) {
   const container = document.querySelector(".profile-container");
   const currentUser = getProfile().name;
   if (!container) return;
@@ -46,8 +48,14 @@ export function renderProfile(user) {
   editProfileButton.classList.add("edit-profile-btn");
 
   const followButton = document.createElement("button");
+  followButton.id = "follow-btn";
   followButton.textContent = "Follow";
   followButton.classList.add("follow-user");
+
+  const unFollowButton = document.createElement("button");
+  unFollowButton.id = "unfollow-btn";
+  unFollowButton.textContent = "Unfollow";
+  unFollowButton.classList.add("unfollow-user");
 
   container.appendChild(userImgInfoDiv);
   userImgInfoDiv.appendChild(profileImg);
@@ -63,6 +71,18 @@ export function renderProfile(user) {
   if (user.name === currentUser) {
     container.appendChild(editProfileButton);
   } else {
-    container.appendChild(followButton);
+    if (!followCheck(user.followers)) {
+      container.appendChild(followButton);
+      followButton.addEventListener("click", () => {
+        followUser(user.name);
+        container.appendChild(followButton);
+      });
+    } else {
+      container.appendChild(unFollowButton);
+      unFollowButton.addEventListener("click", () => {
+        unFollowUser(user.name);
+        container.appendChild(unFollowButton);
+      });
+    }
   }
 }
