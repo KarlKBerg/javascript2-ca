@@ -1,6 +1,7 @@
 import { getProfile } from "../storage/storage.js";
 import { followCheck } from "../utils/validation.js";
 import { followUser, unFollowUser } from "../services/profileService.js";
+import { displayToastMessage } from "../utils/domHelpers.js";
 
 export function renderProfile(user, initFn) {
   const container = document.querySelector(".profile-container");
@@ -73,15 +74,23 @@ export function renderProfile(user, initFn) {
   } else {
     if (!followCheck(user.followers)) {
       container.appendChild(followButton);
-      followButton.addEventListener("click", () => {
-        followUser(user.name);
-        container.appendChild(followButton);
+      followButton.addEventListener("click", async () => {
+        try {
+          await followUser(user.name);
+          initFn();
+        } catch (error) {
+          displayToastMessage(error.message, "error");
+        }
       });
     } else {
       container.appendChild(unFollowButton);
-      unFollowButton.addEventListener("click", () => {
-        unFollowUser(user.name);
-        container.appendChild(unFollowButton);
+      unFollowButton.addEventListener("click", async () => {
+        try {
+          await unFollowUser(user.name);
+          initFn();
+        } catch (error) {
+          displayToastMessage(error.message, "error");
+        }
       });
     }
   }
