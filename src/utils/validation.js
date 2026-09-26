@@ -1,3 +1,5 @@
+import { getProfile } from "../storage/storage.js";
+
 export function usernameFilled(username) {
   return username !== "";
 }
@@ -12,4 +14,9 @@ export function passwordMatch(psw, rePsw) {
 
 export function passwordLength(psw) {
   return psw.length >= 8;
+}
+
+export function followCheck(followers) {
+  const myName = getProfile()?.name;
+  return followers.some((follower) => follower.name === myName);
 }
