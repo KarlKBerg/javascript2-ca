@@ -1,4 +1,4 @@
-import { BASE_URL, get, post, put } from "./apiClient.js";
+import { BASE_URL, get, post, put, del } from "./apiClient.js";
 
 export async function getPosts() {
   const endpoint = "social/posts?_author=true";
