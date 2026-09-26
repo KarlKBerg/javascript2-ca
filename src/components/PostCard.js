@@ -1,3 +1,4 @@
+import { getProfile } from "../storage/storage.js";
 import { deletePostAction } from "./deletePostController.js";
 import { populateEditModal } from "./EditPostController.js";
 export let editPostId;
@@ -99,7 +100,9 @@ export function renderPost(post, containerId) {
   postData.appendChild(postAuthor);
   postAuthor.appendChild(bold);
   postData.appendChild(postedAt);
-  postMeta.appendChild(postMenu);
+  if (post.author?.name === getProfile()?.name) {
+    postMeta.appendChild(postMenu);
+  }
   postDiv.appendChild(postMessageClick);
   postMessageClick.appendChild(postMessageDiv);
   postMessageDiv.appendChild(postTitle);
