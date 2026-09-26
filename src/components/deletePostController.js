@@ -4,6 +4,7 @@ import { deletePost } from "../services/postsService.js";
 
 export async function deletePostAction(id) {
   try {
+    confirm("Delete post?");
     await deletePost(id);
     renderFeed();
     displayToastMessage("Post deleted", "success");
