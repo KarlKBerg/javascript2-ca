@@ -7,7 +7,7 @@ import { displayToastMessage } from "../utils/domHelpers.js";
 export async function initProfile() {
   const url = new URLSearchParams(window.location.search);
   const params = url.get("name");
-  let username = params;
+  let username = params || getProfile()?.name;
   if (!username) return;
   try {
     let user = await fetchProfile(username);
@@ -20,7 +20,7 @@ export async function initProfile() {
 export async function initProfilePosts() {
   const url = new URLSearchParams(window.location.search);
   const params = url.get("name");
-  let username = params;
+  let username = params || getProfile()?.name;
   if (!username) return;
   try {
     let posts = await fetchProfilePosts(username);
