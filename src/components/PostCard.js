@@ -89,7 +89,10 @@ export function renderPost(post, containerId) {
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
   postMeta.appendChild(postInfo);
-  postInfo.appendChild(profileImg);
+  if (!post.author.avatar.url) {
+  } else {
+    postInfo.appendChild(profileImg);
+  }
   postInfo.appendChild(postData);
   postData.appendChild(postAuthor);
   postAuthor.appendChild(bold);
