@@ -5,6 +5,7 @@ import { logoutUserListener } from "./components/LogoutForm.js";
 import { registerFormListener } from "./components/RegisterForm.js";
 import { createPostListener } from "./components/CreatePostController.js";
 import { editPostListener } from "./components/EditPostController.js";
+import { myProfile } from "./components/ProfileController.js";
 
 registerFormListener();
 loginFormListener();
@@ -12,3 +13,4 @@ logoutUserListener();
 pageCheck();
 createPostListener();
 editPostListener();
+myProfile();
