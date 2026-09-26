@@ -1,4 +1,5 @@
 import { getPosts } from "../services/postsService.js";
+import { getToken } from "../storage/storage.js";
 import { displayToastMessage } from "../utils/domHelpers.js";
 import { renderPost } from "./PostCard.js";
 import { renderSinglePost } from "./PostController.js";
@@ -22,7 +23,7 @@ export function pageCheck() {
   const loginPage = document.getElementById("login");
   const postPage = document.getElementById("post");
   const profilePage = document.getElementById("profile");
-  const token = localStorage.getItem("accessToken");
+  const token = getToken;
 
   if (feed || profilePage) {
     if (!token) {
