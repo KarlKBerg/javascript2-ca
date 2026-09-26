@@ -285,12 +285,7 @@ form p {
   color: white;
   padding: 0.8rem 1.6rem;
   font-size: 1.4rem;
-  background-color: #1f1f1f;
   border-radius: 0.8rem;
-}
-.profile-container button:hover {
-  background-color: #5d5d5d;
-  cursor: pointer;
 }
 .profile-container {
   display: flex;
@@ -464,4 +459,25 @@ nav {
 #edit-post-btn:hover {
   cursor: pointer;
   background-color: rgb(0, 68, 0);
+}
+.edit-profile-btn {
+  background-color: #1f1f1f;
+}
+.edit-profile-btn:hover {
+  background-color: #525252;
+  cursor: pointer;
+}
+.follow-user {
+  background-color: green;
+}
+.follow-user:hover {
+  background-color: #006800;
+  cursor: pointer;
+}
+.unfollow-user {
+  background-color: red;
+}
+.unfollow-user:hover {
+  background-color: rgb(143, 1, 1);
+  cursor: pointer;
 }
