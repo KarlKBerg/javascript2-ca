@@ -34,6 +34,5 @@ export async function updatePost(id, title, body) {
 
 export async function deletePost(id) {
   const endpoint = `social/posts/${id}`;
-  const response = await del(endpoint);
-  return response.data;
+  await del(endpoint);
 }
