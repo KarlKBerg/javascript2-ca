@@ -24,11 +24,11 @@ export async function createPost(title, body) {
 
 export async function updatePost(id, title, body) {
   const endpoint = `social/posts/${id}`;
-  const updatePost = {
+  const postData = {
     title: title,
     body: body,
   };
-  const response = await put(endpoint, updatePost);
+  const response = await put(endpoint, postData);
   return response.data;
 }
 
