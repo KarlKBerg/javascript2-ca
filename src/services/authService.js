@@ -1,4 +1,4 @@
-import { removeToken, setToken } from "../storage/storage.js";
+import { removeToken, setProfile, setToken } from "../storage/storage.js";
 import { BASE_URL } from "./apiClient.js";
 import { post } from "./apiClient.js";
 
@@ -32,8 +32,8 @@ export async function loginUser(credentials) {
     const { accessToken, ...profile } = response.data;
 
     if (accessToken) {
-      setToken();
-      localStorage.setItem("profile", JSON.stringify(profile));
+      setToken(accessToken);
+      setProfile(profile);
       return profile;
     } else {
       throw new Error("Login successful, but no access token recieved!");
