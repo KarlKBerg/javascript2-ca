@@ -28,7 +28,7 @@ export function renderPost(post, containerId) {
 
   const usernameLink = document.createElement("a");
   usernameLink.textContent = post.author?.name;
-  usernameLink.href = `profile.html?name=${post.author.name}`;
+  usernameLink.href = `profile.html?name=${post.author?.name}`;
 
   const postedAt = document.createElement("span");
   postedAt.classList.add("post-time");
@@ -95,8 +95,7 @@ export function renderPost(post, containerId) {
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
   postMeta.appendChild(postInfo);
-  if (!post.author?.avatar?.url) {
-  } else {
+  if (post.author?.avatar?.url) {
     postInfo.appendChild(profileImg);
   }
   postInfo.appendChild(postData);
@@ -137,4 +136,68 @@ export function renderPost(post, containerId) {
       deletePostAction(post.id);
     }
   });
+}
+
+export function renderSearchPost(post, containerId) {
+  const container = document.getElementById(containerId);
+  const postDiv = document.createElement("div");
+  postDiv.classList.add("post");
+
+  const postMeta = document.createElement("div");
+  postMeta.classList.add("post-meta");
+
+  const postInfo = document.createElement("div");
+  postInfo.classList.add("post-info");
+
+  const profileImg = document.createElement("img");
+  profileImg.classList.add("circle");
+  profileImg.src = post.author?.avatar?.url;
+
+  const postData = document.createElement("div");
+  postData.classList.add("post-data");
+
+  const postAuthor = document.createElement("span");
+  postAuthor.classList.add("poster-name");
+
+  const bold = document.createElement("b");
+
+  const usernameLink = document.createElement("a");
+  usernameLink.textContent = post.author?.name;
+  usernameLink.href = `profile.html?name=${post.author?.name}`;
+
+  const postedAt = document.createElement("span");
+  postedAt.classList.add("post-time");
+  postedAt.textContent = `Posted at: ${post.created}`;
+
+  const postMenu = document.createElement("i");
+  postMenu.classList.add("fa-solid", "fa-ellipsis-vertical");
+
+  const postMessageDiv = document.createElement("div");
+  postMessageDiv.classList.add("post-message");
+
+  const postMessageClick = document.createElement("a");
+  postMessageClick.href = `post.html?id=${post.id}`;
+
+  const postTitle = document.createElement("h2");
+  postTitle.classList.add("post-title");
+  postTitle.textContent = post.title;
+
+  const postMessage = document.createElement("span");
+  postMessage.textContent = post.body;
+
+  container.appendChild(postDiv);
+  postDiv.appendChild(postMeta);
+  postMeta.appendChild(postInfo);
+  if (post.author?.avatar?.url) {
+    postInfo.appendChild(profileImg);
+  }
+  postInfo.appendChild(postData);
+  postData.appendChild(postAuthor);
+  postAuthor.appendChild(bold);
+  bold.appendChild(usernameLink);
+  postData.appendChild(postedAt);
+  postDiv.appendChild(postMessageClick);
+  postMessageClick.appendChild(postMessageDiv);
+  postMessageDiv.appendChild(postTitle);
+  postMessageDiv.appendChild(postMessage);
 }
