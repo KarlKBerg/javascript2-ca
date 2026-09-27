@@ -20,3 +20,17 @@ export function followCheck(followers) {
   const myName = getProfile()?.name;
   return followers.some((follower) => follower.name === myName);
 }
+
+export function debounce(func, wait) {
+  let timeoutId;
+
+  return function (...args) {
+    const context = this;
+
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
