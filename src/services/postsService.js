@@ -36,3 +36,9 @@ export async function deletePost(id) {
   const endpoint = `social/posts/${id}`;
   await del(endpoint);
 }
+
+export async function searchPosts(search) {
+  const endpoint = `social/posts/search?q=${search}&_author=true`;
+  const response = await get(endpoint);
+  return response.data;
+}
