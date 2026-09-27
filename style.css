@@ -216,7 +216,7 @@ form p {
   display: flex;
   gap: 1.2rem;
 }
-.post-info .circle {
+.circle {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -481,4 +481,31 @@ nav {
 .unfollow-user:hover {
   background-color: rgb(143, 1, 1);
   cursor: pointer;
+}
+.search-results {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+.result-container {
+  position: fixed;
+  z-index: 1001;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  overflow-y: auto;
+  height: 100vh;
+}
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
 }
