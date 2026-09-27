@@ -25,6 +25,9 @@
         <button class="form-btn" id="logout-btn">Logout</button>
       </nav>
     </header>
+    <div class="search-results hidden">
+      <div class="result-container" id="result-container"></div>
+    </div>
     <div class="toast-message hidden"></div>
     <div class="edit-post-modal hidden">
       <div class="edit-post-form">
@@ -43,7 +46,9 @@
             ></textarea>
           </div>
           <div class="buttons-container">
-            <button class="edit-btn" id="cancel-edit-post-btn">Cancel</button>
+            <button class="edit-btn" id="cancel-edit-post-btn" type="button">
+              Cancel
+            </button>
             <button class="edit-btn" id="edit-post-btn">Confirm</button>
           </div>
         </form>
