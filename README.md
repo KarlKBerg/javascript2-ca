@@ -19,6 +19,7 @@ The webapp registers and log in users using the Noroff API v2 which uses a @stud
 - See single post
 - Follow/unfollow users
 - Search posts
+- See each users posts on profile page
 
 ## Build with
 
