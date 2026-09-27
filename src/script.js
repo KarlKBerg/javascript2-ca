@@ -6,6 +6,7 @@ import { registerFormListener } from "./components/RegisterForm.js";
 import { createPostListener } from "./components/CreatePostController.js";
 import { editPostListener } from "./components/EditPostController.js";
 import { myProfile } from "./components/ProfileController.js";
+import { searchListener } from "./components/SearchController.js";
 
 registerFormListener();
 loginFormListener();
@@ -14,3 +15,4 @@ pageCheck();
 createPostListener();
 editPostListener();
 myProfile();
+searchListener();
