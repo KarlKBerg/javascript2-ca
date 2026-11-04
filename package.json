@@ -20,6 +20,8 @@
   "homepage": "https://github.com/KarlKBerg/javascript2-ca#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.4",
+    "prettier": "^3.9.10",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.4"
   }
 }
