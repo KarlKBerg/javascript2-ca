@@ -1,0 +1,25 @@
+{
+  "name": "javascript2-ca",
+  "version": "1.0.0",
+  "description": "This is my submission for the JavaScript 2 course assignment, a social media site that fetches posts, shows users and has follow/unfollow features.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarlKBerg/javascript2-ca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarlKBerg/javascript2-ca/issues"
+  },
+  "homepage": "https://github.com/KarlKBerg/javascript2-ca#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "tailwindcss": "^4.3.4"
+  }
+}
