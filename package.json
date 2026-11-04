@@ -4,8 +4,8 @@
   "description": "This is my submission for the JavaScript 2 course assignment, a social media site that fetches posts, shows users and has follow/unfollow features.",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
-    "build": "tailwindcss -i ./css/input.css -o ./css/style.css --minify"
+    "dev": "tailwindcss -i ./src/css/input.css -o ./src/css/style.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/style.css --minify"
   },
   "repository": {
     "type": "git",
