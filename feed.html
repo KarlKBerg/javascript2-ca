@@ -61,10 +61,15 @@
         class="searchfield w-full rounded-md bg-white px-1 py-1 text-sm text-black outline-0"
       />
     </div>
-    <div class="search-results hidden">
-      <div class="result-container" id="result-container"></div>
+    <div
+      class="search-results fixed top-0 left-0 z-999 hidden w-screen bg-black/50"
+    >
+      <div
+        class="fixed top-25 left-0.5 z-1001 flex h-screen translate-x-0.5 flex-col gap-1 overflow-y-auto rounded-sm bg-white px-2 py-1"
+        id="result-container"
+      ></div>
     </div>
-    <div class="toast-message hidden"></div>
+    <div class="toast-message hidden p-1 text-center"></div>
     <div class="fixed top-0 left-0 z-999 hidden h-screen w-screen bg-black/50">
       <div
         class="bg-bcg-secondary fixed top-0.5 left-0.5 z-1000 flex w-100 translate-x-1/5 translate-y-1/5 flex-col gap-2 rounded-md px-2 py-4"
@@ -89,7 +94,7 @@
               class="rounded-sm bg-white px-1 py-2 text-black outline-0"
             ></textarea>
           </div>
-          <div class="buttons-container">
+          <div class="buttons-container flex gap-1">
             <button
               class="edit-btn rounded-lg bg-red-700 px-4 py-1 text-white"
               id="cancel-edit-post-btn"
@@ -107,12 +112,21 @@
         </form>
       </div>
     </div>
-    <main id="feed">
+    <main
+      id="feed"
+      class="m-auto flex max-w-200 flex-col border-r-white border-l-white p-1"
+    >
       <h1>Feed</h1>
-      <div class="create-post">
+      <div
+        class="create-post bg-bcg-main mt-1 flex flex-col gap-1 rounded-sm p-1"
+      >
         <h2>Create post</h2>
-        <form id="create-post-form">
+        <form
+          id="create-post-form"
+          class="flex flex-col items-center gap-1 text-black"
+        >
           <input
+            class="w-full rounded-sm bg-white p-1"
             type="text"
             name="post-title"
             id="post-title"
@@ -121,15 +135,24 @@
           />
 
           <textarea
+            class="w-full resize-none rounded-sm bg-white p-1"
             name="post-message"
             id="post-message"
             placeholder="What would you like to say?"
           ></textarea>
 
-          <button class="form-btn" id="post-btn">Post</button>
+          <button
+            class="form-btn bg-bcg-secondary hover:bg-green self-end rounded-sm border-2 border-white px-4 py-1 text-white hover:cursor-pointer"
+            id="post-btn"
+          >
+            Post
+          </button>
         </form>
       </div>
-      <div class="posts-container" id="post-container"></div>
+      <div
+        class="posts-container mt-2 flex flex-col gap-2"
+        id="post-container"
+      ></div>
     </main>
   </body>
 </html>
