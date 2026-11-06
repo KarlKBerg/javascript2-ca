@@ -16,3 +16,22 @@ createPostListener();
 editPostListener();
 myProfile();
 searchListener();
+
+document.getElementById("hamburger-menu").addEventListener("click", () => {
+  const menu = document.getElementById("nav-mobile");
+  const searchField = document.getElementById("mobile-search");
+  menu.classList.toggle("hidden");
+  menu.classList.toggle("flex");
+  searchField.classList.add("hidden");
+});
+document.getElementById("mobile-search-btn").addEventListener("click", () => {
+  const searchField = document.getElementById("mobile-search");
+  const menu = document.getElementById("nav-mobile");
+  searchField.classList.toggle("hidden");
+  menu.classList.add("hidden");
+  menu.classList.remove("flex");
+});
+
+document.getElementById("profile-btn").addEventListener("click", () => {
+  window.location.href = "../profile.html";
+});
