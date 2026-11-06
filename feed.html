@@ -35,8 +35,7 @@
           <span>Profile</span>
         </a>
         <button
-          class="rounded-lg bg-red-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-red-800"
-          id="logout-btn"
+          class="logout-btn rounded-lg bg-red-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-red-800"
         >
           Logout
         </button>
@@ -45,10 +44,15 @@
         <i class="fa-mosaic fa-solid fa-bars"></i>
       </button>
     </header>
-    <div class="hidden flex-col justify-center gap-4 py-4" id="nav-mobile">
+    <div
+      class="hidden flex-col justify-center gap-4 py-4 md:hidden"
+      id="nav-mobile"
+    >
       <button id="profile-btn">Profile</button>
       <button id="mobile-search-btn">Search</button>
-      <button class="rounded-lg bg-red-700 px-4 py-1 text-white">Logout</button>
+      <button class="logout-btn rounded-lg bg-red-700 px-4 py-1 text-white">
+        Logout
+      </button>
     </div>
     <div id="mobile-search" class="hidden">
       <input
