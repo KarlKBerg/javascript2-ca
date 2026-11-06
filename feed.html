@@ -11,20 +11,52 @@
     ></script>
     <title>The social</title>
   </head>
-  <body>
-    <header>
-      <a href="./index.html" id="logo">The social</a>
+  <body class="bg-bcg-secondary flex h-screen flex-col text-white">
+    <header
+      class="bg-bcg-main flex items-center justify-between p-4 md:p-6 lg:p-8"
+    >
+      <a href="./index.html" id="logo" class="text-2xl md:text-3xl lg:text-4xl"
+        >The social</a
+      >
       <div id="search">
-        <input type="search" placeholder="Search..." />
+        <input
+          type="search"
+          placeholder="Search..."
+          class="searchfield hidden w-full min-w-90 rounded-md bg-white text-sm text-black outline-0 md:block md:px-2 md:text-lg"
+        />
       </div>
-      <nav>
-        <a href="profile.html" class="nav-item" id="profile-link">
+      <nav class="hidden gap-4 md:flex">
+        <a
+          href="profile.html"
+          class="flex flex-col items-center rounded-sm p-1 hover:cursor-pointer"
+          id="profile-link"
+        >
           <i class="fa-solid fa-user"></i>
           <span>Profile</span>
         </a>
-        <button class="form-btn" id="logout-btn">Logout</button>
+        <button
+          class="rounded-lg bg-red-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-red-800"
+          id="logout-btn"
+        >
+          Logout
+        </button>
       </nav>
+      <button id="hamburger-menu" class="md:hidden">
+        <i class="fa-mosaic fa-solid fa-bars"></i>
+      </button>
     </header>
+    <div class="hidden flex-col justify-center gap-4 py-4" id="nav-mobile">
+      <button id="profile-btn">Profile</button>
+      <button id="mobile-search-btn">Search</button>
+      <button class="rounded-lg bg-red-700 px-4 py-1 text-white">Logout</button>
+    </div>
+    <div id="mobile-search" class="hidden">
+      <input
+        type="search"
+        placeholder="Search..."
+        class="searchfield w-full rounded-md bg-white px-1 py-1 text-sm text-black outline-0"
+      />
+    </div>
     <div class="search-results hidden">
       <div class="result-container" id="result-container"></div>
     </div>
@@ -76,7 +108,7 @@
           <button class="form-btn" id="post-btn">Post</button>
         </form>
       </div>
-      <div class="posts-container" id="posts-container"></div>
+      <div class="posts-container" id="post-container"></div>
     </main>
   </body>
 </html>
