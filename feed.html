@@ -65,27 +65,44 @@
       <div class="result-container" id="result-container"></div>
     </div>
     <div class="toast-message hidden"></div>
-    <div class="edit-post-modal hidden">
-      <div class="edit-post-form">
+    <div class="fixed top-0 left-0 z-999 hidden h-screen w-screen bg-black/50">
+      <div
+        class="bg-bcg-secondary fixed top-0.5 left-0.5 z-1000 flex w-100 translate-x-1/5 translate-y-1/5 flex-col gap-2 rounded-md px-2 py-4"
+      >
         <h2>Edit post</h2>
-        <form id="edit-post">
-          <div class="edit">
+        <form class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1">
             <label for="edit-post-title">Edit title:</label>
-            <input type="text" name="edit-post-title" id="edit-post-title" />
+            <input
+              type="text"
+              name="edit-post-title"
+              id="edit-post-title"
+              class="rounded-md bg-white px-1 py-1 text-black outline-0"
+            />
           </div>
 
-          <div class="edit">
+          <div class="flex flex-col gap-1">
             <label for="edit-post-message">Edit message:</label>
             <textarea
               name="edit-post-message"
               id="edit-post-message"
+              class="rounded-sm bg-white px-1 py-2 text-black outline-0"
             ></textarea>
           </div>
           <div class="buttons-container">
-            <button class="edit-btn" id="cancel-edit-post-btn" type="button">
+            <button
+              class="edit-btn rounded-lg bg-red-700 px-4 py-1 text-white"
+              id="cancel-edit-post-btn"
+              type="button"
+            >
               Cancel
             </button>
-            <button class="edit-btn" id="edit-post-btn">Confirm</button>
+            <button
+              class="edit-btn rounded-lg bg-green-700 px-4 py-1 text-white"
+              id="edit-post-btn"
+            >
+              Confirm
+            </button>
           </div>
         </form>
       </div>
