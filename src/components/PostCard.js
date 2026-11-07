@@ -72,7 +72,7 @@ export function renderPost(post, containerId) {
     "post-reactions",
     "flex",
     "items-center",
-    "gap-1",
+    "gap-2",
   );
 
   const thumbUp = document.createElement("div");
@@ -106,13 +106,30 @@ export function renderPost(post, containerId) {
   postSettings.classList.add("post-settings", "hidden");
 
   const settingsContainer = document.createElement("div");
-  settingsContainer.classList.add("settings-container");
+  settingsContainer.classList.add(
+    "settings-container",
+    "flex",
+    "flex-col",
+    "gap-4",
+    "mt-4",
+    "bg-bcg-secondary",
+    "items-center",
+  );
 
   const editPostIcon = document.createElement("i");
-  editPostIcon.classList.add("fa-solid", "fa-pen-to-square");
+  editPostIcon.classList.add(
+    "fa-solid",
+    "fa-pen-to-square",
+    "hover:cursor-pointer",
+  );
 
   const deletePostIcon = document.createElement("i");
-  deletePostIcon.classList.add("fa-solid", "fa-trash");
+  deletePostIcon.classList.add(
+    "fa-solid",
+    "fa-trash",
+    "hover:cursor-pointer",
+    "text-red-600",
+  );
 
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);
