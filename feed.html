@@ -35,7 +35,7 @@
           <span>Profile</span>
         </a>
         <button
-          class="logout-btn rounded-lg bg-red-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-red-800"
+          class="logout-btn rounded-lg bg-red-700 px-6 text-white hover:cursor-pointer hover:bg-red-800"
         >
           Logout
         </button>
@@ -69,10 +69,12 @@
         id="result-container"
       ></div>
     </div>
-    <div class="toast-message hidden p-1 text-center"></div>
-    <div class="fixed top-0 left-0 z-999 hidden h-screen w-screen bg-black/50">
+    <div class="toast-message hidden p-2 text-center"></div>
+    <div
+      class="edit-post-modal fixed inset-0 z-999 hidden overflow-y-auto bg-black/50 px-4"
+    >
       <div
-        class="bg-bcg-secondary fixed top-0.5 left-0.5 z-1000 flex w-100 translate-x-1/5 translate-y-1/5 flex-col gap-2 rounded-md px-2 py-4"
+        class="bg-bcg-secondary mx-auto mt-20 flex w-full max-w-100 flex-col gap-2 rounded-md px-2 py-4"
       >
         <h2>Edit post</h2>
         <form class="flex flex-col gap-2">
