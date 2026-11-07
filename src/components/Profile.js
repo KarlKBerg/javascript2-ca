@@ -10,24 +10,51 @@ export function renderProfile(user, initFn) {
   container.innerHTML = "";
 
   const userImgInfoDiv = document.createElement("div");
-  userImgInfoDiv.classList.add("user-img-info");
+  userImgInfoDiv.classList.add(
+    "user-img-info",
+    "flex",
+    "gap-2",
+    "md:gap-4",
+    "lg:gap-6",
+  );
 
   const profileImg = document.createElement("img");
-  profileImg.classList.add("circle");
+  profileImg.classList.add(
+    "circle",
+    "w-25",
+    "h-25",
+    "rounded-full",
+    "bg-white",
+  );
   profileImg.src = user?.avatar?.url;
 
   const userInfoDiv = document.createElement("div");
-  userInfoDiv.classList.add("user-info");
+  userInfoDiv.classList.add("user-info", "flex", "flex-col", "justify-between");
 
   const username = document.createElement("span");
   username.id = "username";
+  username.classList.add("font-bold");
   username.textContent = user?.name;
 
   const followCountDiv = document.createElement("div");
-  followCountDiv.classList.add("follow-count");
+  followCountDiv.classList.add(
+    "follow-count",
+    "flex",
+    "gap-2",
+    "md:gap-4",
+    "lg:gap-6",
+    "text-sm",
+    "md:text-md",
+  );
 
   const followingDiv = document.createElement("div");
-  followingDiv.classList.add("follow");
+  followingDiv.classList.add(
+    "follow",
+    "flex",
+    "flex-col",
+    "items-center",
+    "gap-1",
+  );
 
   const followingTitle = document.createElement("span");
   followingTitle.textContent = "Following";
@@ -36,7 +63,13 @@ export function renderProfile(user, initFn) {
   followingCount.textContent = user._count.following;
 
   const followerDiv = document.createElement("div");
-  followerDiv.classList.add("follow");
+  followerDiv.classList.add(
+    "follow",
+    "flex",
+    "flex-col",
+    "items-center",
+    "gap-1",
+  );
 
   const followerTitle = document.createElement("span");
   followerTitle.textContent = "Followers";
@@ -45,8 +78,22 @@ export function renderProfile(user, initFn) {
   followerCount.textContent = user._count.followers;
 
   const editProfileButton = document.createElement("button");
-  editProfileButton.textContent = "Edit profile";
-  editProfileButton.classList.add("edit-profile-btn");
+  editProfileButton.textContent = "Edit";
+  editProfileButton.classList.add(
+    "edit-profile-btn",
+    "self-start",
+    "text-white",
+    "px-2",
+    "md:px-4",
+    "lg:px-6",
+    "py-1",
+    "md:py-2",
+    "lg:py-3",
+    "rounded-md",
+    "hover:bg-gray-800",
+    "bg-bcg-main",
+    "hover:cursor-pointer",
+  );
 
   const followButton = document.createElement("button");
   followButton.id = "follow-btn";

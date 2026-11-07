@@ -11,19 +11,38 @@
     ></script>
     <title>The social</title>
   </head>
-  <body>
-    <header>
-      <a href="./index.html" id="logo">The social</a>
+  <body class="bg-bcg-secondary flex h-screen flex-col text-white">
+    <header
+      class="bg-bcg-main flex items-center justify-between p-4 md:p-6 lg:p-8"
+    >
+      <a href="./index.html" id="logo" class="text-2xl md:text-3xl lg:text-4xl"
+        >The social</a
+      >
       <div id="search">
-        <input type="search" placeholder="Search..." id="search" />
+        <input
+          type="search"
+          placeholder="Search..."
+          class="searchfield hidden w-full min-w-90 rounded-md bg-white text-sm text-black outline-0 md:block md:px-2 md:text-lg"
+        />
       </div>
-      <nav>
-        <a href="profile.html" class="nav-item">
+      <nav class="hidden gap-4 md:flex">
+        <a
+          href="profile.html"
+          class="flex flex-col items-center rounded-md p-1 hover:cursor-pointer"
+          id="profile-link"
+        >
           <i class="fa-solid fa-user"></i>
           <span>Profile</span>
         </a>
-        <button class="form-btn" id="logout-btn">Logout</button>
+        <button
+          class="logout-btn rounded-lg bg-red-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-red-800"
+        >
+          Logout
+        </button>
       </nav>
+      <button id="hamburger-menu" class="md:hidden">
+        <i class="fa-mosaic fa-solid fa-bars"></i>
+      </button>
     </header>
     <div class="toast-message hidden"></div>
     <div class="search-results hidden">
@@ -54,9 +73,14 @@
         </form>
       </div>
     </div>
-    <main id="profile">
-      <div class="profile-container"></div>
-      <h2>Posts</h2>
+    <main
+      id="profile"
+      class="mx-auto flex w-full max-w-150 flex-col p-2 md:p-4"
+    >
+      <div
+        class="profile-container mt-2 flex justify-between border-b-2 border-white pb-2 md:mt-4 md:pb-4 lg:mt-6"
+      ></div>
+      <h2 class="mt-2 text-lg md:mt-4 md:text-xl">Posts</h2>
       <div class="user-posts-container" id="user-posts-container"></div>
     </main>
   </body>
