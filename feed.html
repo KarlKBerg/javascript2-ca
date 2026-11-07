@@ -28,7 +28,7 @@
       <nav class="hidden gap-4 md:flex">
         <a
           href="profile.html"
-          class="flex flex-col items-center rounded-sm p-1 hover:cursor-pointer"
+          class="flex flex-col items-center rounded-md p-1 hover:cursor-pointer"
           id="profile-link"
         >
           <i class="fa-solid fa-user"></i>
@@ -65,7 +65,7 @@
       class="search-results fixed top-0 left-0 z-999 hidden w-screen bg-black/50"
     >
       <div
-        class="fixed top-25 left-0.5 z-1001 flex h-screen translate-x-0.5 flex-col gap-1 overflow-y-auto rounded-sm bg-white px-2 py-1"
+        class="fixed top-25 left-0.5 z-1001 flex h-screen translate-x-0.5 flex-col gap-1 overflow-y-auto rounded-md bg-white px-2 py-1"
         id="result-container"
       ></div>
     </div>
@@ -91,7 +91,7 @@
             <textarea
               name="edit-post-message"
               id="edit-post-message"
-              class="rounded-sm bg-white px-1 py-2 text-black outline-0"
+              class="rounded-md bg-white px-1 py-2 text-black outline-0"
             ></textarea>
           </div>
           <div class="buttons-container flex gap-1">
@@ -112,21 +112,20 @@
         </form>
       </div>
     </div>
-    <main
-      id="feed"
-      class="m-auto flex max-w-200 flex-col border-r-white border-l-white p-1"
-    >
-      <h1>Feed</h1>
+    <main id="feed" class="mx-auto flex w-full max-w-200 flex-col p-1 md:p-4">
+      <h1 class="border-b-2 border-white pb-2 text-xl md:text-3xl lg:text-4xl">
+        Feed
+      </h1>
       <div
-        class="create-post bg-bcg-main mt-1 flex flex-col gap-1 rounded-sm p-1"
+        class="create-post bg-bcg-main lg-p4 mt-2 flex w-full flex-col gap-2 rounded-md p-1 md:mt-4 md:gap-4 md:p-2 lg:mt-6"
       >
         <h2>Create post</h2>
         <form
           id="create-post-form"
-          class="flex flex-col items-center gap-1 text-black"
+          class="flex flex-col items-center gap-2 text-black md:gap-4"
         >
           <input
-            class="w-full rounded-sm bg-white p-1"
+            class="w-full rounded-md bg-white p-1"
             type="text"
             name="post-title"
             id="post-title"
@@ -135,14 +134,14 @@
           />
 
           <textarea
-            class="w-full resize-none rounded-sm bg-white p-1"
+            class="w-full resize-none rounded-md bg-white p-1"
             name="post-message"
             id="post-message"
             placeholder="What would you like to say?"
           ></textarea>
 
           <button
-            class="form-btn bg-bcg-secondary hover:bg-green self-end rounded-sm border-2 border-white px-4 py-1 text-white hover:cursor-pointer"
+            class="form-btn bg-bcg-secondary self-end rounded-md border-2 border-white px-4 py-1 text-white hover:cursor-pointer hover:bg-green-800"
             id="post-btn"
           >
             Post
@@ -150,8 +149,8 @@
         </form>
       </div>
       <div
-        class="posts-container mt-2 flex flex-col gap-2"
-        id="post-container"
+        class="posts-container mt-2 flex flex-col gap-2 md:mt-4 md:gap-4 lg:mt-6 lg:gap-6"
+        id="posts-container"
       ></div>
     </main>
   </body>
