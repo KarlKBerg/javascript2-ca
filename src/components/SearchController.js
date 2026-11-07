@@ -25,7 +25,7 @@ async function search(input) {
   }
 }
 export function searchListener() {
-  const searchField = document.getElementById("search");
+  const searchField = document.querySelector(".searchfield");
   if (!searchField) return;
   const debouncedSearch = debounce(search, 700);
   searchField.addEventListener("keyup", (event) => {

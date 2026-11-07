@@ -25,6 +25,7 @@ export function editPostListener() {
   const cancelBtn = document.getElementById("cancel-edit-post-btn");
   const container = document.querySelector(".edit-post-modal");
   if (!container) return;
+  if (!editForm) return;
   cancelBtn.addEventListener("click", () => {
     container.classList.add("hidden");
   });

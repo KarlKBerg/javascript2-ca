@@ -6,20 +6,36 @@ export let editPostId;
 export function renderPost(post, containerId) {
   const container = document.getElementById(containerId);
   const postDiv = document.createElement("div");
-  postDiv.classList.add("post");
+  postDiv.classList.add(
+    "post",
+    "flex",
+    "flex-col",
+    "gap-1",
+    "px-2",
+    "py-1",
+    "bg-bcg-main",
+    "rounded-md",
+    "w-full",
+  );
 
   const postMeta = document.createElement("div");
-  postMeta.classList.add("post-meta");
+  postMeta.classList.add("post-meta", "flex", "justify-between", "items-start");
 
   const postInfo = document.createElement("div");
-  postInfo.classList.add("post-info");
+  postInfo.classList.add("post-info", "flex", "gap-1");
 
   const profileImg = document.createElement("img");
-  profileImg.classList.add("circle");
+  profileImg.classList.add(
+    "circle",
+    "w-12",
+    "h-12",
+    "rounded-full",
+    "bg-white",
+  );
   profileImg.src = post.author?.avatar?.url;
 
   const postData = document.createElement("div");
-  postData.classList.add("post-data");
+  postData.classList.add("post-data", "flex", "flex-col", "gap-1");
 
   const postAuthor = document.createElement("span");
   postAuthor.classList.add("poster-name");
@@ -31,27 +47,37 @@ export function renderPost(post, containerId) {
   usernameLink.href = `profile.html?name=${post.author?.name}`;
 
   const postedAt = document.createElement("span");
-  postedAt.classList.add("post-time");
+  postedAt.classList.add("post-time", "text-sm");
   postedAt.textContent = `Posted at: ${post.created}`;
 
   const postMenu = document.createElement("i");
-  postMenu.classList.add("fa-solid", "fa-ellipsis-vertical");
+  postMenu.classList.add(
+    "fa-solid",
+    "fa-ellipsis-vertical",
+    "hover:cursor-pointer",
+  );
 
   const postMessageDiv = document.createElement("div");
-  postMessageDiv.classList.add("post-message");
+  postMessageDiv.classList.add("post-message", "flex", "flex-col", "gap-1");
 
   const postMessageClick = document.createElement("a");
   postMessageClick.href = `post.html?id=${post.id}`;
 
   const postTitle = document.createElement("h2");
-  postTitle.classList.add("post-title");
+  postTitle.classList.add("post-title", "text-md", "font-bold", "break-words");
   postTitle.textContent = post.title;
 
   const postMessage = document.createElement("span");
+  postMessage.classList.add("text-sm", "break-words");
   postMessage.textContent = post.body;
 
   const postReactions = document.createElement("div");
-  postReactions.classList.add("post-reactions");
+  postReactions.classList.add(
+    "post-reactions",
+    "flex",
+    "items-center",
+    "gap-2",
+  );
 
   const thumbUp = document.createElement("div");
   thumbUp.classList.add("post-reaction");
@@ -84,13 +110,30 @@ export function renderPost(post, containerId) {
   postSettings.classList.add("post-settings", "hidden");
 
   const settingsContainer = document.createElement("div");
-  settingsContainer.classList.add("settings-container");
+  settingsContainer.classList.add(
+    "settings-container",
+    "flex",
+    "flex-col",
+    "gap-4",
+    "mt-4",
+    "bg-bcg-secondary",
+    "items-center",
+  );
 
   const editPostIcon = document.createElement("i");
-  editPostIcon.classList.add("fa-solid", "fa-pen-to-square");
+  editPostIcon.classList.add(
+    "fa-solid",
+    "fa-pen-to-square",
+    "hover:cursor-pointer",
+  );
 
   const deletePostIcon = document.createElement("i");
-  deletePostIcon.classList.add("fa-solid", "fa-trash");
+  deletePostIcon.classList.add(
+    "fa-solid",
+    "fa-trash",
+    "hover:cursor-pointer",
+    "text-red-600",
+  );
 
   container.appendChild(postDiv);
   postDiv.appendChild(postMeta);

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 320px;
+
+  --color-bcg-main: #1f1f1f;
+  --color-bcg-secondary: #2c2c2c;
+}
+.error {
+  @apply bg-red-800;
+}
+.success {
+  @apply bg-green-800;
+}

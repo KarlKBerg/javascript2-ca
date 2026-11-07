@@ -4,49 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/script.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <script
       src="https://kit.fontawesome.com/b5a5784c82.js"
       crossorigin="anonymous"
     ></script>
     <title>The social | Register</title>
   </head>
-  <body>
-    <header>
-      <a href="./index.html" id="logo">The social</a>
-      <a href="./index.html" class="form-btn login-btn">Login</a>
+  <body class="bg-bcg-secondary flex h-screen flex-col text-white">
+    <header
+      class="bg-bcg-main flex items-center justify-between p-4 md:p-6 lg:p-8"
+    >
+      <a href="./index.html" id="logo" class="text-2xl md:text-3xl lg:text-4xl"
+        >The social</a
+      >
+      <a
+        href="./index.html"
+        class="rounded-lg bg-green-700 px-4 py-2 text-white hover:cursor-pointer hover:bg-green-800"
+        >Login</a
+      >
     </header>
     <div class="toast-message hidden"></div>
 
-    <main id="register">
-      <div class="form-container" id="register-container">
-        <h1>Register</h1>
-        <form id="register-form">
-          <div class="form-item-container">
+    <main
+      id="register"
+      class="mx-auto flex w-full max-w-120 flex-1 items-center justify-center px-4"
+    >
+      <div
+        class="form-container bg-bcg-main flex w-full flex-col items-center gap-2 rounded-md p-4 px-4 md:gap-4 md:p-6 md:px-6 lg:p-8 lg:px-8"
+        id="register-container"
+      >
+        <h1 class="text-lg font-bold md:text-xl lg:text-2xl">Register</h1>
+        <form id="register-form" class="flex w-full flex-col gap-4">
+          <div class="form-item-container flex flex-col gap-1 md:gap-2">
             <label for="uname"><b>Username</b></label>
-            <input type="text" name="uname" id="uname" required />
+            <input
+              class="w-full rounded-md bg-white px-2 py-1 text-sm text-black outline-0 md:px-4 md:py-2 md:text-lg lg:px-6"
+              type="text"
+              name="uname"
+              id="uname"
+              required
+            />
           </div>
 
-          <div class="form-item-container">
+          <div
+            class="form-item-container form-item-container flex flex-col gap-1 md:gap-2"
+          >
             <label for="email"><b>Email</b></label>
-            <input type="email" name="email" id="email" required />
+            <input
+              class="w-full rounded-md bg-white px-2 py-1 text-sm text-black outline-0 md:px-4 md:py-2 md:text-lg lg:px-6"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
           </div>
 
-          <div class="form-item-container">
+          <div
+            class="form-item-container form-item-container flex flex-col gap-1 md:gap-2"
+          >
             <label for="password"><b>Password</b></label>
-            <input type="password" name="password" id="password" required />
+            <input
+              class="w-full rounded-md bg-white px-2 py-1 text-sm text-black outline-0 md:px-4 md:py-2 md:text-lg lg:px-6"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
           </div>
 
-          <div class="form-item-container">
+          <div
+            class="form-item-container form-item-container flex flex-col gap-1 md:gap-2"
+          >
             <label for="re-password"><b>Re-enter password</b></label>
             <input
               type="password"
               name="re-password"
               id="re-password"
               required
+              class="w-full rounded-md bg-white px-2 py-1 text-sm text-black outline-0 md:px-4 md:py-2 md:text-lg lg:px-6"
             />
           </div>
-          <button class="form-btn register-btn" id="register-button">
+          <button
+            class="form-btn register-btn hover:bg-blue:800 md_py-4 rounded-md bg-blue-700 px-4 py-2 font-bold hover:cursor-pointer md:px-5"
+            id="register-button"
+          >
             Register
           </button>
           <p>

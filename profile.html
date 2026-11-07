@@ -4,60 +4,128 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/script.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <script
       src="https://kit.fontawesome.com/b5a5784c82.js"
       crossorigin="anonymous"
     ></script>
     <title>The social</title>
   </head>
-  <body>
-    <header>
-      <a href="./index.html" id="logo">The social</a>
+  <body class="bg-bcg-secondary flex h-screen flex-col text-white">
+    <header
+      class="bg-bcg-main flex items-center justify-between p-4 md:p-6 lg:p-8"
+    >
+      <a href="./index.html" id="logo" class="text-2xl md:text-3xl lg:text-4xl"
+        >The social</a
+      >
       <div id="search">
-        <input type="search" placeholder="Search..." id="search" />
+        <input
+          type="search"
+          placeholder="Search..."
+          class="searchfield hidden w-full min-w-90 rounded-md bg-white text-sm text-black outline-0 md:block md:px-2 md:text-lg"
+        />
       </div>
-      <nav>
-        <a href="profile.html" class="nav-item">
+      <nav class="hidden gap-4 md:flex">
+        <a
+          href="profile.html"
+          class="flex flex-col items-center rounded-md p-1 hover:cursor-pointer"
+          id="profile-link"
+        >
           <i class="fa-solid fa-user"></i>
           <span>Profile</span>
         </a>
-        <button class="form-btn" id="logout-btn">Logout</button>
+        <button
+          class="logout-btn rounded-lg bg-red-700 px-6 text-white hover:cursor-pointer hover:bg-red-800"
+        >
+          Logout
+        </button>
       </nav>
+      <button id="hamburger-menu" class="md:hidden">
+        <i class="fa-mosaic fa-solid fa-bars"></i>
+      </button>
     </header>
-    <div class="toast-message hidden"></div>
-    <div class="search-results hidden">
-      <div class="result-container" id="result-container"></div>
+    <div
+      class="hidden flex-col justify-center gap-4 py-4 md:hidden"
+      id="nav-mobile"
+    >
+      <button id="profile-btn">Profile</button>
+      <button id="mobile-search-btn">Search</button>
+      <button class="logout-btn rounded-lg bg-red-700 px-4 py-1 text-white">
+        Logout
+      </button>
     </div>
-    <div class="edit-post-modal hidden">
-      <div class="edit-post-form">
+    <div id="mobile-search" class="hidden">
+      <input
+        type="search"
+        placeholder="Search..."
+        class="searchfield w-full rounded-md bg-white px-1 py-1 text-sm text-black outline-0"
+      />
+    </div>
+    <div
+      class="search-results fixed top-0 left-0 z-999 hidden w-screen bg-black/50"
+    >
+      <div
+        class="fixed top-25 left-0.5 z-1001 flex h-screen translate-x-0.5 flex-col gap-1 overflow-y-auto rounded-md bg-white px-2 py-1"
+        id="result-container"
+      ></div>
+    </div>
+    <div class="toast-message hidden p-2 text-center"></div>
+    <div
+      class="edit-post-modal fixed inset-0 z-999 hidden overflow-y-auto bg-black/50 px-4"
+    >
+      <div
+        class="bg-bcg-secondary mx-auto mt-20 flex w-full max-w-100 flex-col gap-2 rounded-md px-2 py-4"
+      >
         <h2>Edit post</h2>
-        <form id="edit-post">
-          <div class="edit">
+        <form class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1">
             <label for="edit-post-title">Edit title:</label>
-            <input type="text" name="edit-post-title" id="edit-post-title" />
+            <input
+              type="text"
+              name="edit-post-title"
+              id="edit-post-title"
+              class="rounded-md bg-white px-1 py-1 text-black outline-0"
+            />
           </div>
 
-          <div class="edit">
+          <div class="flex flex-col gap-1">
             <label for="edit-post-message">Edit message:</label>
             <textarea
               name="edit-post-message"
               id="edit-post-message"
+              class="rounded-md bg-white px-1 py-2 text-black outline-0"
             ></textarea>
           </div>
-          <div class="buttons-container">
-            <button class="edit-btn" id="cancel-edit-post-btn" type="button">
+          <div class="buttons-container flex gap-1">
+            <button
+              class="edit-btn rounded-lg bg-red-700 px-4 py-1 text-white"
+              id="cancel-edit-post-btn"
+              type="button"
+            >
               Cancel
             </button>
-            <button class="edit-btn" id="edit-post-btn">Confirm</button>
+            <button
+              class="edit-btn rounded-lg bg-green-700 px-4 py-1 text-white"
+              id="edit-post-btn"
+            >
+              Confirm
+            </button>
           </div>
         </form>
       </div>
     </div>
-    <main id="profile">
-      <div class="profile-container"></div>
-      <h2>Posts</h2>
-      <div class="user-posts-container" id="user-posts-container"></div>
+    <main
+      id="profile"
+      class="mx-auto flex w-full max-w-150 flex-col p-2 md:p-4"
+    >
+      <div
+        class="profile-container mt-2 flex justify-between border-b-2 border-white pb-2 md:mt-4 md:pb-4 lg:mt-6"
+      ></div>
+      <h2 class="mt-2 text-lg md:mt-4 md:text-xl">Posts</h2>
+      <div
+        class="user-posts-container mt-2 flex flex-col gap-2 md:gap-4"
+        id="user-posts-container"
+      ></div>
     </main>
   </body>
 </html>

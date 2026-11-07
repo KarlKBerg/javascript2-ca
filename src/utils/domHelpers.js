@@ -14,7 +14,7 @@ export function displayToastMessage(message, type) {
   if (!container) return;
   const messageElement = document.createElement("span");
   messageElement.textContent = message;
-  messageElement.classList.add("message-text");
+  messageElement.classList.add("message-text", "font-bold");
   container.innerHTML = "";
   container.appendChild(messageElement);
   container.classList.remove("hidden");
