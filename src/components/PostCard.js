@@ -51,7 +51,11 @@ export function renderPost(post, containerId) {
   postedAt.textContent = `Posted at: ${post.created}`;
 
   const postMenu = document.createElement("i");
-  postMenu.classList.add("fa-solid", "fa-ellipsis-vertical");
+  postMenu.classList.add(
+    "fa-solid",
+    "fa-ellipsis-vertical",
+    "hover:cursor-pointer",
+  );
 
   const postMessageDiv = document.createElement("div");
   postMessageDiv.classList.add("post-message", "flex", "flex-col", "gap-1");
